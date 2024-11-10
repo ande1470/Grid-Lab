@@ -1,0 +1,195 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-bg.jpg') center/cover no-repeat;
+    height: 400px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    background-color: #1e3d59;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    grid-column: 1 / 5;
+}
+
+/* Breaking News Section */
+.breaking_news {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #8eabe1;
+    grid-column: 2 / 5;
+    grid-row: 4 / 12;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.newsfeed .newsFont {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    animation: slideIn 2s ease-out;
+}
+
+/* Hover Effect for Breaking News */
+.breaking_news:hover {
+    background-color: #6f92b4;
+}
+
+/* Sidebar Section */
+aside {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+aside h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1e3d59;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside ul li {
+    font-size: 1.2rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+aside ul li:hover {
+    background-color: #e9e9e9;
+    cursor: pointer;
+}
+
+/* Article Section */
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-column: 1 / 5;
+    grid-row: 12 / 13;
+}
+
+/* Info Boxes Styling */
+.infoBox {
+    background-color: #a1bfd9;
+    padding: 15px;
+    font-family: "Comic Sans MS";
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.infoBox img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.infoBox:hover {
+    transform: scale(1.05);
+}
+
+.infoBox.zoom {
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    background-color: #1e3d59;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px 0;
+    border-radius: 10px;
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+}
+
+/* Hover Effects for Footer */
+footer:hover {
+    background-color: #155174;
+}
+
+/* Animation for Breaking News */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    article {
+        grid-template-columns: 1fr;
+    }
+
+    .breaking_news {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .infoBox {
+        font-size: 1rem;
+    }
+}
